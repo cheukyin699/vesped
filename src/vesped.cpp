@@ -2,22 +2,22 @@
 
 #include "editor.h"
 
-#define VESPED_VERSION		"v0.1.0"
+#define VESPED_VERSION        "v0.1.0"
 
 int main(int argc, char *argv[]) {
-	Editor *ed = new Editor(argv[1]);
+    Editor *ed = new Editor(argv[1]);
 
-	// Display info
-	cout << "VESPED " VESPED_VERSION << endl;
+    // Display info
+    cout << "VESPED " VESPED_VERSION << endl;
 
-	string line = "";
+    string line = "";
 
-	while (ed->isRunning) {
-		// Take command input
-		getline(cin, line);
+    while (ed->isRunning) {
+        // Take command input
+        getline(cin, line);
 
-		ed->handleInput(line);
-	}
+        ed->handleInput(line);
+    }
 
-	return 0;
+    return 0;
 }

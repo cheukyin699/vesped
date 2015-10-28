@@ -4,24 +4,27 @@
 #include <vector>
 #include <string>
 
-#define OK_STAT		"Ok"
+#define OK_STAT        "Ok"
 
 using namespace std;
 
 class Editor {
 private:
-	vector<string> buffer;
-	unsigned long curr_line;
+    string filename;
+    vector<string> buffer;
+    unsigned long curr_line;
 
-	void list();
+    void list();
+    void save();
+    void err(string);
 
 public:
-	bool isRunning;
+    bool isRunning;
 
-	Editor();
-	Editor(string);
+    Editor();
+    Editor(string);
 
-	void handleInput(string);
+    void handleInput(string);
 };
 
 #endif
