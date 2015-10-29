@@ -4,7 +4,7 @@ LD := g++
 LDFLAGS :=
 
 EXE := vesped
-OBJ := obj/vesped.o obj/editor.o
+OBJ := obj/vesped.o obj/editor.o obj/parser.o
 
 
 all: $(EXE)
@@ -26,3 +26,7 @@ obj/vesped.o: src/vesped.cpp
 
 obj/editor.o: src/editor.cpp src/editor.h
 	$(CXX) $(CXXFLAGS) $< -o $@
+
+obj/parser.o: src/parser.cpp src/parser.h
+	$(CXX) $(CXXFLAGS) $< -o $@
+

@@ -1,0 +1,24 @@
+#ifndef PARSER_H
+#define PARSER_H
+
+#include <string>
+
+using namespace std;
+
+enum Command {List, Save, Insert, EditLine};
+
+class Parser {
+private:
+    string raw;
+
+public:
+    Command cmd;
+    string content;
+
+    Parser(string s): raw(s) {};
+
+    void parse();
+
+};
+
+#endif

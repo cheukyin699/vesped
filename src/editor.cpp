@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "editor.h"
+#include "parser.h"
 
 using namespace std;
 
@@ -30,22 +31,23 @@ Editor::Editor(string fn) {
 
 void Editor::handleInput(string line) {
     // Basic commands
-    if (line == "list") {
+    if (line == "list" || line == "l") {
         list();
         return;
     }
 
-    if (line == "quit") {
+    if (line == "quit" || line == "q") {
         isRunning = false;
         return;
     }
 
-    if (line == "save") {
+    if (line == "save" || line == "s") {
         save();
         return;
     }
 
-    // Editing commands
+    // For more complex commands, do parsing
+    Parser *p = new Parser(line);
 }
 
 void Editor::list() {
