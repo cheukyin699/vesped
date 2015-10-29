@@ -60,7 +60,7 @@ void Editor::save() {
         err("Error: No filename; please input filename");
         return;
     }
-    ofstream f(filename);
+    ofstream f(filename.c_str());
 
     if (f.good()) {
         for (unsigned ln = 0; ln < buffer.size(); ln++)

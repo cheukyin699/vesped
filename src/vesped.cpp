@@ -2,9 +2,10 @@
 
 #include "editor.h"
 
-#define VESPED_VERSION        "v0.1.0"
+#define VESPED_VERSION        "v0.0.0"
 
 int main(int argc, char *argv[]) {
+    // TODO - Going to add command line options parsing later
     Editor *ed = new Editor(argv[1]);
 
     // Display info
