@@ -48,6 +48,8 @@ void Editor::handleInput(string line) {
 
     // For more complex commands, do parsing
     Parser *p = new Parser(line);
+    if (p->cmd == EditLine)
+        cout << "Line#: " << p->lineno << endl;
 }
 
 void Editor::list() {

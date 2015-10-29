@@ -13,6 +13,7 @@ private:
 
 public:
     Command cmd;
+    unsigned lineno;
     string content;
 
     Parser(string s): raw(s) {};
