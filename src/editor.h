@@ -4,7 +4,8 @@
 #include <vector>
 #include <string>
 
-#define OK_STAT        "Ok"
+#define OK_STAT         "Ok"
+#define NORM_PRMPT      "> "
 
 using namespace std;
 
@@ -20,6 +21,7 @@ private:
 
 public:
     bool isRunning;
+    string prmpt;
 
     Editor();
     Editor(string);

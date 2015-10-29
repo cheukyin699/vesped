@@ -2,7 +2,7 @@
 
 #include "editor.h"
 
-#define VESPED_VERSION        "v0.0.0"
+#define VESPED_VERSION          "v0.0.0"
 
 int main(int argc, char *argv[]) {
     // TODO - Going to add command line options parsing later
@@ -15,6 +15,7 @@ int main(int argc, char *argv[]) {
 
     while (ed->isRunning) {
         // Take command input
+        cout << ed->prmpt;
         getline(cin, line);
 
         ed->handleInput(line);

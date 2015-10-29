@@ -8,6 +8,7 @@ using namespace std;
 Editor::Editor() {
     filename = "";
     isRunning = true;
+    prmpt = NORM_PRMPT;
 }
 
 Editor::Editor(string fn) {
@@ -24,6 +25,7 @@ Editor::Editor(string fn) {
 
     filename = fn;
     isRunning = true;
+    prmpt = NORM_PRMPT;
 }
 
 void Editor::handleInput(string line) {
@@ -42,6 +44,8 @@ void Editor::handleInput(string line) {
         save();
         return;
     }
+
+    // Editing commands
 }
 
 void Editor::list() {
