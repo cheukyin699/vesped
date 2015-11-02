@@ -4,6 +4,10 @@
 
 #include "parser.h"
 
+Parser::~Parser() {
+    delete root;
+}
+
 void Parser::parse() {
     string tmp = "";
     bool isNumeric = true, getCMD = true;

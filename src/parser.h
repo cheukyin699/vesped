@@ -12,6 +12,15 @@ struct Node {
     Node *parent, *lchild, *rchild;
     NType type;
     string raw;
+
+    ~Node() {
+        if (parent)
+            delete parent;
+        if (lchild)
+            delete lchild;
+        if (rchild)
+            delete rchild;
+    }
 };
 
 class Parser {
@@ -25,6 +34,7 @@ public:
     Node *root;
 
     Parser(string s): raw(s), root(NULL) {};
+    ~Parser();
 
     void parse();
     void parseContent(Command);
