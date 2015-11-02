@@ -32,18 +32,21 @@ void Parser::parse() {
     // List command
     if (tmp == "list" || tmp == "l") {
         cmd = List;
+        parseContent(cmd);
         return;
     }
 
     // Insert command
     if (tmp == "insert" || tmp == "ins") {
         cmd = Insert;
+        parseContent(cmd);
         return;
     }
 
     // Save command
     if (tmp == "save" || tmp == "s") {
         cmd = Save;
+        parseContent(cmd);
         return;
     }
 }
@@ -56,4 +59,17 @@ void Parser::trimContent() {
     for (i = content.length()-1; content[i] == ' '; i--) {}
 
     content = content.substr(start, i);
+}
+
+void Parser::parseContent(Command c) {
+    switch (c) {
+    case List:
+        break;
+    case Insert:
+        break;
+    case EditLine:
+        break;
+    default:
+        break;
+    }
 }
