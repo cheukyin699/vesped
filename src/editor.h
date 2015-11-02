@@ -17,6 +17,7 @@ private:
 
     void list();
     void save();
+    void save(string);
     void err(string);
 
 public:

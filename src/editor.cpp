@@ -52,12 +52,17 @@ void Editor::handleInput(string line) {
 
     switch (p->cmd) {
     case List:
+        // list x, y
         break;
     case Save:
+        // save filename
+        save(p->content);
         break;
     case Insert:
+        // insert line# line
         break;
     case EditLine:
+        // line# line
         break;
     default:
         break;
@@ -75,12 +80,16 @@ inline void Editor::err(string e) {
     cerr << e << endl;
 }
 
-void Editor::save() {
-    if (filename == "") {
+inline void Editor::save() {
+    save(filename);
+}
+
+void Editor::save(string fn) {
+    if (fn == "") {
         err("Error: No filename; please input filename");
         return;
     }
-    ofstream f(filename.c_str());
+    ofstream f(fn.c_str());
 
     if (f.good()) {
         for (unsigned ln = 0; ln < buffer.size(); ln++)
@@ -91,5 +100,5 @@ void Editor::save() {
 
     f.close();
 
-    cout << OK_STAT << endl;
+    cout << "Saved as `" << fn << "'\n" << OK_STAT << endl;
 }

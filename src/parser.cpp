@@ -20,10 +20,40 @@ void Parser::parse() {
             tmp += *it;
     }
 
+    trimContent();
+
     // Edit the line
     if (isNumeric) {
         cmd = EditLine;
         lineno = atoi(tmp.c_str());
         return;
     }
+
+    // List command
+    if (tmp == "list" || tmp == "l") {
+        cmd = List;
+        return;
+    }
+
+    // Insert command
+    if (tmp == "insert" || tmp == "ins") {
+        cmd = Insert;
+        return;
+    }
+
+    // Save command
+    if (tmp == "save" || tmp == "s") {
+        cmd = Save;
+        return;
+    }
+}
+
+void Parser::trimContent() {
+    string tmp = "";
+    unsigned i = 0;
+    for (; content[i] == ' '; i++) {}
+    unsigned start = i;
+    for (i = content.length()-1; content[i] == ' '; i--) {}
+
+    content = content.substr(start, i);
 }

@@ -19,6 +19,7 @@ public:
     Parser(string s): raw(s) {};
 
     void parse();
+    void trimContent();
 
 };
 
